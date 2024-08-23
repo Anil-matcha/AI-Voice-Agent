@@ -89,6 +89,8 @@ def synthesize_audio(text):
     with requests.post(DEEPGRAM_TTS_URL, stream=True, headers=headers, json=payload) as r:
         return r.content
 
+import pygame
+
 def play_audio(file_path):
     pygame.mixer.init()
     pygame.mixer.music.load(file_path)
@@ -97,8 +99,13 @@ def play_audio(file_path):
     while pygame.mixer.music.get_busy():
         pygame.time.Clock().tick(10)
 
+    # Stop the mixer and release resources
+    pygame.mixer.music.stop()
+    pygame.mixer.quit()
+
     # Signal that playback is finished
     mute_microphone.clear()
+
 
 def main():
     try:
@@ -145,7 +152,9 @@ def main():
                     play_audio(output_audio_file)
                     time.sleep(0.5)
                     microphone.unmute()
-
+                    # Delete the audio file after playing
+                    if os.path.exists(output_audio_file):
+                        os.remove(output_audio_file)
             else:
                 print(f"Interim Results: {sentence}")
 
