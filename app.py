@@ -89,7 +89,6 @@ def synthesize_audio(text):
     with requests.post(DEEPGRAM_TTS_URL, stream=True, headers=headers, json=payload) as r:
         return r.content
 
-import pygame
 
 def play_audio(file_path):
     pygame.mixer.init()
