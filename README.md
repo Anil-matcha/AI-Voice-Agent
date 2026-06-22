@@ -35,3 +35,10 @@ pip install -r requirements.txt
 Run the app using below command
 
 python app.py
+
+## Related Projects
+
+- [Open-Generative-AI](https://github.com/Anil-matcha/Open-Generative-AI) — Open-source AI studio with 200+ models including audio and voice generation
+- [Generative-Media-Skills](https://github.com/SamurAIGPT/Generative-Media-Skills) — Use AI models as agent skills in Claude Code, Cursor, and Gemini CLI
+- [Open-AI-Design-Agent](https://github.com/Anil-matcha/Open-AI-Design-Agent) — Autonomous AI design agent — pair with voice agent for multimodal workflows
+- [muapi-cli](https://github.com/SamurAIGPT/muapi-cli) — CLI for MuAPI — run voice and media models from your terminal
